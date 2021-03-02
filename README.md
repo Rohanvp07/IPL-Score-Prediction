@@ -1,4 +1,5 @@
 # IPL-Score-Prediction
 This is a machine learning model made using python and flask which predicts first inning score of an IPL match.
 
-https://user-images.githubusercontent.com/49580063/109602664-8d17b380-7b46-11eb-80de-9a34452792a1.mp4
+
+![FormatFactory Screen Record20210302_105425 00_00_02-00_00_24 (2)](https://user-images.githubusercontent.com/49580063/109604165-06b0a100-7b49-11eb-8daf-6c730ac92cf6.gif)
