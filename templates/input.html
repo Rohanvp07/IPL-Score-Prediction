@@ -39,7 +39,7 @@
     
     
     <div class="container-sm" style="width: 50%;">
-        <form action="http://localhost:5000/predict" method="POST" class="login-box">
+        <form action="{{ url_for('pred')}}" method="post" class="login-box">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-1 text-white-900", style="color: blanchedalmond; text-align: center;">IPL FIRST INNING SCORE PREDICTION</h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="color: blanchedalmond; text-align: center;">Machine Learning Model</p>
             <br/>
