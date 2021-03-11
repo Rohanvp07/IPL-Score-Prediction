@@ -1,27 +1,50 @@
-<html>
-    <head>
-        
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    </head>
-    <body style="background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
-	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );">
-        <section class="text-gray-600 body-font relative">
-            <div class="container px-5 py-16 mx-auto">
-              <div class="flex flex-col text-center w-full mb-6">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-1 text-white-900", style="color: blanchedalmond;">IPL FIRST INNING SCORE PREDICTION</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="color: blanchedalmond;">Machine Learning Model</p>
-              </div>
-              <form action="http://localhost:5000/predict" method="POST" class="lg:w-1/3 md:w-2/3 mx-auto">
-                <div class="flex flex-wrap -m-2">
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label for="name" class="leading-7 text-sm text-white-600" style="color: blanchedalmond;">Batting Team</label>
-                      <select style="color: black;" class="w-full bg-gray-100 bg-opacity-80 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-white-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" name="batting-team">
-                        <option value="none">--- Select a Batting team ---</option>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+        html {
+            height: 1000px;
+        }
+    body {
+        margin:0;
+        padding:0;
+        font-family: sans-serif;
+        background: linear-gradient(#141e30, #243b55);
+    }
+    label{
+        color: white;
+    }
+    .login-box {
+     position: absolute;
+     top: 70%;
+     left: 50%;
+     width: 50%;
+     padding: 40px;
+     transform: translate(-50%, -50%);
+     background: rgba(0,0,0,.5);
+     box-sizing: border-box;
+     box-shadow: 0 15px 25px rgba(0,0,0,.6);
+     border-radius: 10px;
+}
+
+    </style>
+    <title>IPL PREDICTION</title>
+  </head>
+  <body>
+    
+    
+    <div class="container-sm" style="width: 50%;">
+        <form action="http://localhost:5000/predict" method="POST" class="login-box">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-1 text-white-900", style="color: blanchedalmond; text-align: center;">IPL FIRST INNING SCORE PREDICTION</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="color: blanchedalmond; text-align: center;">Machine Learning Model</p>
+            <br/>
+            <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="batting-team">
+                <option value="none">--- Select a Batting team ---</option>
                         <option value="Mumbai Indians">Mumbai Indians</option>
                         <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
                         <option value="Chennai Super Kings">Chennai Super Kings</option>
@@ -30,14 +53,10 @@
                         <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
                         <option value="Delhi Daredevils">Delhi Daredevils</option>
                         <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
-                    </select><br>
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label for="name" class="leading-7 text-sm text-white-600" style="color: blanchedalmond;">Bowling Team</label>
-                      <select style="color: black;" class="w-full bg-gray-100 bg-opacity-80 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" name="bowling-team">
-                        <option value="none">--- Select a Bowling team ---</option>
+            </select>
+            <br/>
+            <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" name="bowling-team">
+                <option value="none">--- Select a Bowling team ---</option>
                         <option value="Mumbai Indians">Mumbai Indians</option>
                         <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
                         <option value="Chennai Super Kings">Chennai Super Kings</option>
@@ -46,47 +65,29 @@
                         <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
                         <option value="Delhi Daredevils">Delhi Daredevils</option>
                         <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
-                    </select><br>
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label style="color:blanchedalmond;" for="email" class="leading-7 text-sm text-gray-600">Overs</label>
-                      <input style="color: black;" class="w-full bg-gray-100 bg-opacity-80 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" type="text" name="overs" placeholder="Overs (>= 5.0) eg. 7.2" required="required">                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label style="color:blanchedalmond;" for="email" class="leading-7 text-sm text-gray-600">Runs</label>
-                      <input style="color: black;" class="w-full bg-gray-100 bg-opacity-80 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" type="text" name="runs" placeholder="Runs eg. 64" required="required">
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label style="color:blanchedalmond;" for="email" class="leading-7 text-sm text-gray-600">Wickets</label>
-                      <input style="color: black;" class="w-full bg-gray-100 bg-opacity-80 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" type="text" name="wickets" placeholder="Wickets eg. 4" required="required">                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label style="color:blanchedalmond;" for="email" class="leading-7 text-sm text-gray-600">Runs scored in last 5 overs</label>
-                      <input style="color: black;" class="w-full bg-gray-100 bg-opacity-80 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" type="text" name="runs_in_prev_5" placeholder="Runs scored in previous 5 Overs eg. 42" required="required">
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label style="color:blanchedalmond;" for="email" class="leading-7 text-sm text-gray-600">Wickets taken in last 5 overs</label>
-                      <input style="color: black;" class="w-full bg-gray-100 bg-opacity-80 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" type="text" name="wickets_in_prev_5" placeholder="Wickets taken in previous 5 Overs eg. 3" required="required">                    </div>
-                  </div>
-                  
-                  <div class="p-2 w-full">
-                    <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Predict Score</button>
-                  </div>
-                  <div class="p-2 w-full text-center">
-                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white-900", style="color: blanchedalmond;">{{score}}</h1>
-                 </div>
-                  
-                </div>
-              </form>
-            </div>
-          </section>
-    </body>
+            </select>
+            <label>Overs</label>
+            <input type="text" class="form-control" name="overs" placeholder="Overs (>= 5.0) eg. 7.2" required="required">  
+            <br/>
+            <label>Runs</label>
+            <input type="text" class="form-control" name="runs" placeholder="Runs eg. 64" required="required">  
+            <br/>
+            <label>Wickets</label>
+            <input type="text" class="form-control" name="wickets" placeholder="Wickets eg. 4" required="required">  
+            <br/>
+            <label>Runs scored in previous 5 Overs</label>
+            <input type="text" class="form-control" name="runs_in_prev_5" placeholder="Runs scored in previous 5 Overs eg. 42" required="required">
+            <br/>
+            <label>Wickets taken in previous 5 Overs</label>
+            <input type="text" class="form-control" name="wickets_in_prev_5" placeholder="Wickets taken in previous 5 Overs eg. 3" required="required">
+            <br/>
+            <div style="text-align: center;">
+            <button  class="flex mx-auto text-white-900 bg-blue border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Predict Score</button>
+          </div>
+            <div class="p-2 w-full text-center">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white-900", style="color: blanchedalmond;">{{score}}</h1>
+            </div>    
+            </form>
+    </div>
+  </body>
 </html>
