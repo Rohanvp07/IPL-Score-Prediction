@@ -7,7 +7,7 @@ app = Flask(__name__)
 s='ipl_model.pkl'
 model = pickle.load(open(s,'rb'))
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def index():
    return render_template('input.html')
 
