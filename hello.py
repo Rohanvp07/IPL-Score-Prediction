@@ -8,15 +8,11 @@ s='ipl_model.pkl'
 model = pickle.load(open(s,'rb'))
 
 @app.route('/',methods=['GET'])
-def index():
+def Home():
    return render_template('input.html')
 
-@app.route('/prediction/<int:score>')
-def final_score(score):
-   return 'Predicted score is : %d' % score
 
-
-@app.route('/predict',methods=['POST'])
+@app.route("/predict",methods=['POST'])
 def pred():
    tp=[]
    if request.method == 'POST':
